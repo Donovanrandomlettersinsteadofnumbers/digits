@@ -5,10 +5,40 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+
+  --bs-dark: var(--nat-navbar-bg);
+  --bs-dark-rgb: var(--nat-navbar-bg-rgb);
+  background-image: url('/supid.jpg');
+  background-size: cover;
 }
+
+.bg-dark a.dropdown-item {
+  color: var(--nat-navbar-bg);
+}
+
+body .navbar {
+  --bs-navbar-active-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--nat-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-color: var(--nat-navbar-text-color);
+  --bs-navbar-hover-color: var(--nat-navbar-highlight-text);
+}
+
+
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/* Set up some CSS variables to theme the application. */
+:root {
+  --nat-navbar-bg: #07321b;
+  --nat-navbar-bg-rgb: 20, 60, 40;
+  --nat-navbar-text-color: white;
+}
+
+footer, footer a {
+  color: var(--nat-navbar-text-color);
 }
