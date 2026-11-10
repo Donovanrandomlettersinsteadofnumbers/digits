@@ -1,4 +1,4 @@
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/landing-page.png)
+<img class="img-fluid" src="../doc/HomePage.png">
 
 nextjs-application-template is a sample Next.js 16 application that illustrates:
 
@@ -297,9 +297,7 @@ By default, each user only sees the Stuff that they have created. However, the s
 
 #### Landing page
 
-When you retrieve the app at http://localhost:3000, this is what should be displayed:
-
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/landing-page.png)
+Shows what the website does.
 
 The next step is to use the Login menu to either Login to an existing account or register a new account.
 
@@ -315,54 +313,25 @@ Alternatively, clicking on the Login link, then on the Sign Up menu item display
 
 ![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/register-page.png)
 
-#### Landing (after Login) page, non-Admin user
+#### Add Contacts page
 
-Once you log in (either to an existing account or by creating a new one), the navbar changes as follows:
+Allows user to add a contact with info such as first name, last name, address, an image, and a description.
 
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/landing-after-login-page.png)
+#### List Contacts page
 
-You can now add new Stuff documents, and list the Stuff you have created. Note you cannot see any Stuff created by other users.
-
-#### Add Stuff page
-
-After logging in, here is the page that allows you to add new Stuff:
-
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/add-stuff-page.png)
-
-#### List Stuff page
-
-After logging in, here is the page that allows you to list all the Stuff you have created:
-
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/list-stuff-page.png)
+Lists out the contacts for the account.
 
 You click the "Edit" link to go to the Edit Stuff page, shown next.
 
-#### Edit Stuff page
+#### Edit Contacts page
 
-After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save it:
-
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/edit-stuff-page.png)
-
-#### Landing (after Login), Admin user
-
-You can define an "admin" user in the settings.json file. This user, after logging in, gets a special entry in the navbar:
-
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/admin-landing-page.png)
+Edit the parts of a contact.
 
 #### Admin page (list all users stuff)
 
-To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Stuff by all of the users:
-
-![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/admin-list-stuff-page.png)
+To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Contacts by all of the users
 
 Note that non-admin users cannot get to this page, even if they type in the URL by hand.
-### Tables
-
-The application implements two tables "Stuff" and "User". Each Stuff row has the following columns: id, name, quantity, condition, and owner. The User table has the following columns: id, email, password (hashed using bcrypt), role.
-
-The Stuff and User models are defined in [prisma/schema.prisma](https://github.com/ics-software-engineering/nextjs-application-template/blob/main/prisma/schema.prisma).
-
-The tables are initialized in [prisma/seed.ts](https://github.com/ics-software-engineering/nextjs-application-template/blob/main/prisma/seed.ts) using the command `npx prisma db seed`.
 
 ### CSS
 
