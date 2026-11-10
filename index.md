@@ -1,4 +1,4 @@
-<img class="img-fluid" src="../doc/HomePage.png">
+<img class="img-fluid" src="doc/HomePage.png>
 
 nextjs-application-template is a sample Next.js 16 application that illustrates:
 
