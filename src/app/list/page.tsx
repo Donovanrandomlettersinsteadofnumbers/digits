@@ -3,9 +3,9 @@ import { Col, Container, Row } from 'react-bootstrap';
 // import StuffItem from '@/components/StuffItem';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import { auth } from '@/lib/auth';
-import { Contact } from '@/lib/validationSchemas';
 import ContactCard from '@/components/ContactCard';
 import { prisma } from '@/lib/prisma';
+import { Contact, Note } from '@prisma/client';
 
 //const contacts: Contact[] = [{
 //     firstName: 'Philip', lastName: 'Johnson', address: 'POST 307, University of Hawaii',
@@ -44,7 +44,13 @@ const ListPage = async () => {
       owner
     },
   });
-  console.log(contacts);
+
+  const notes: Note[] = await prisma.note.findMany({
+    where: {
+      owner
+    },
+  });
+  console.log('contacts', contacts, 'notes', notes);
   // const owner = (session && session.user && session.user.email) || '';
   // const stuff = await prisma.stuff.findMany({
   //   where: {
@@ -62,7 +68,7 @@ const ListPage = async () => {
               <Row xs={1} md={2} lg={3} className="g-4">
                 {contacts.map((contact) =>
                   <Col key={contact.firstName + contact.lastName}>
-                    <ContactCard contact={contact}/>
+                    <ContactCard contact={contact} notes={notes.filter(note => (note.contactId === contact.id))}/>
                   </Col>
                 )}
               </Row>
